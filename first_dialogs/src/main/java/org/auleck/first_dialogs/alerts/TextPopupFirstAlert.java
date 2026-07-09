@@ -100,7 +100,7 @@ public class TextPopupFirstAlert extends Dialog {
             // 去除系统默认白色背景，让自定义背景生效
             Window window = alert.getWindow();
             if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(Color.argb(35, 255, 255, 255)));
+                window.setBackgroundDrawable(new ColorDrawable(Color.argb(0, 255, 255, 255)));
             }
 
             return alert;
