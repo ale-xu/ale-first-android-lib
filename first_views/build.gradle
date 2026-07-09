@@ -1,0 +1,64 @@
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
+
+android {
+    namespace 'org.auleck.first_views'
+    compileSdk rootProject.ext.android.compileSdk
+
+    defaultConfig {
+        minSdk rootProject.ext.android.minSdk
+        targetSdk rootProject.ext.android.targetSdk
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME : project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    compileOptions {
+        sourceCompatibility rootProject.ext.compileOptions.sourceCompatibility
+        targetCompatibility rootProject.ext.compileOptions.targetCompatibility
+    }
+}
+
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                // 手动指定 AAR 产物
+                artifact("$buildDir/outputs/aar/${project.name}-release.aar") {
+                    builtBy assembleRelease   // 确保 assembleRelease 任务先执行
+                }
+                // 显式设置坐标（group 和 version 已在外部定义，但这里明确一下）
+                groupId = 'com.github.ale-xu'
+                artifactId = 'first_views'
+                version = '1.0.0'
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation rootProject.ext.dependencies.publicImplementation
+    implementation rootProject.ext.dependencies.publicTestImplementation
+    implementation rootProject.ext.dependencies.publicAndroidTestImplementation
+
+    implementation fileTree(dir: 'libs' , include: ['*.jar'])
+    implementation libs.activity
+}

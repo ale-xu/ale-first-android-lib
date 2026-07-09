@@ -1,0 +1,94 @@
+ext {
+    plugins = [
+            id : 'com.android.library'
+    ]
+
+    android = [
+            compileSdk                : 36 ,
+            minSdk                    : 29 ,
+            targetSdk                 : 36 ,
+            versionCode               :  1 ,
+            versionName               : '0.0.1' ,
+            testInstrumentationRunner : 'androidx.test.runner.AndroidJUnitRunner'
+    ]
+
+
+    compileOptions = [
+            sourceCompatibility : JavaVersion.VERSION_1_8 ,
+            targetCompatibility : JavaVersion.VERSION_1_8
+    ]
+
+
+    dependencies =[
+            publicImplementation : [
+                    'androidx.appcompat:appcompat:1.6.1' ,
+                    'com.google.android.material:material:1.10.0' ,
+                    'androidx.constraintlayout:constraintlayout:2.1.4' ,
+                    'androidx.test.ext:junit:1.1.5' ,
+                    'androidx.test.espresso:espresso-core:3.5.1',
+                    'com.google.android.gms:play-services-location:21.3.0' ,
+            ] ,
+            publicTestImplementation : [
+                    'junit:junit:4.13.2'
+            ],
+            publicAndroidTestImplementation : [
+                    //添加RxJava3依赖
+                    'io.reactivex.rxjava3:rxjava:3.0.0' ,
+                    'io.reactivex.rxjava3:rxandroid:3.0.0' ,
+                    //添加Retrofit依赖
+                    'com.squareup.retrofit2:retrofit:2.9.0' ,
+                    'com.squareup.retrofit2:converter-gson:2.9.0' ,
+                    'com.squareup.retrofit2:adapter-rxjava3:2.9.0' ,
+                    'com.squareup.okhttp3:logging-interceptor:4.9.0' ,
+                    'com.squareup.okhttp3:okhttp:4.9.0' ,
+                    'com.squareup.okhttp3:okhttp-urlconnection:4.9.0' ,
+                    'com.squareup.okhttp3:okhttp-dnsoverhttps:4.9.0' ,
+                    //添加Gson依赖
+                    'com.google.code.gson:gson:2.8.9' ,
+                    //添加Picasso依赖
+                    'com.squareup.picasso:picasso:2.71828' ,
+                    //添加Glide依赖
+                    'com.github.bumptech.glide:glide:4.13.0' ,
+                    'com.github.bumptech.glide:compiler:4.13.0' ,
+
+                    // 'com.github.gzu-liyujiang.AndroidPicker:AddressPicker:4.1.13' ,
+
+
+                    // 二维码ZXing库
+                    // 核心 ZXing 库
+                    'com.google.zxing:core:3.4.1' ,
+                    // 这是一个对 ZXing 进行了安卓端封装的库，非常方便
+                    'com.journeyapps:zxing-android-embedded:4.3.0',
+
+                    /*图片选择库*/
+                    'io.github.lucksiege:pictureselector:v3.11.2' ,
+                    //'me.jessyan:insgallery:0.7.0' ,
+                    //'me.jessyan:insgallery:0.7.0',
+
+                    // image compress library (Not necessary)
+                    'io.github.lucksiege:compress:v3.11.2' ,
+
+                    // uCrop library (Not necessary)
+                    'io.github.lucksiege:ucrop:v3.11.2' ,
+
+                    // simple camerax library (Not necessary)
+                    'io.github.lucksiege:camerax:v3.11.2' ,
+
+
+                    // 用于重启引用
+                    'com.jakewharton:process-phoenix:2.1.2',
+
+
+                    "androidx.viewpager2:viewpager2:1.1.0" ,// 最新稳定版
+                    "io.coil-kt:coil:2.4.0" ,// 高性能图片加载库
+
+                    //下拉刷新
+                    'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0' ,
+                    'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4',
+
+                    //样式组建库
+                    'com.google.android.material:material:1.6.0'  ,
+            ],
+
+    ]
+}

@@ -1,0 +1,49 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'org.auleck.firstbox'
+    compileSdk rootProject.ext.android.compileSdk
+
+    defaultConfig {
+        applicationId "org.auleck.firstbox"
+        minSdk rootProject.ext.android.minSdk
+        targetSdk rootProject.ext.android.targetSdk
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME : project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility rootProject.ext.compileOptions.sourceCompatibility
+        targetCompatibility rootProject.ext.compileOptions.targetCompatibility
+    }
+}
+
+dependencies {
+    implementation rootProject.ext.dependencies.publicImplementation
+    implementation rootProject.ext.dependencies.publicTestImplementation
+    implementation rootProject.ext.dependencies.publicAndroidTestImplementation
+
+    implementation fileTree(dir: 'libs' , include: ['*.jar'])
+    implementation libs.activity
+
+    implementation project(':first_views')
+    implementation project(':first_dialogs')
+    implementation project(':first_utils')
+}
