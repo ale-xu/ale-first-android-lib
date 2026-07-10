@@ -88,6 +88,11 @@ ext {
 
                     //样式组建库
                     'com.google.android.material:material:1.6.0'  ,
+
+
+
+                    // 腾讯MMKV持久化存储
+                    'com.tencent:mmkv:2.4.0'
             ],
 
     ]

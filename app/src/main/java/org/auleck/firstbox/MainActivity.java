@@ -11,12 +11,16 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.tencent.mmkv.MMKV;
+
 import org.auleck.first_dialogs.FirstDialogsUtil;
 import org.auleck.first_dialogs.alerts.TextPopupFirstAlert;
 import org.auleck.first_utils.FirstUtilsUtil;
+import org.auleck.first_utils.mmkv.MMKVUtils;
 import org.auleck.first_views.FirstViewsUtil;
 
 public class MainActivity extends AppCompatActivity {
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         Button button1 = findViewById(R.id.main_btn1) ;
         Button button2 = findViewById(R.id.main_btn2) ;
         Button button3 = findViewById(R.id.main_btn3) ;
+
+        MMKVUtils.putString("USER_UID","15837079884");
 
         button1.setOnClickListener(v -> {
             //Toast.makeText(this, FirstDialogsUtil.ToastText, Toast.LENGTH_SHORT).show();
@@ -52,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, FirstViewsUtil.ToastText, Toast.LENGTH_SHORT).show();
         });
         button3.setOnClickListener(v -> {
-            Toast.makeText(this, FirstUtilsUtil.ToastText, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, MMKVUtils.getString("USER_UID"), Toast.LENGTH_SHORT).show();
         });
     }
 }
