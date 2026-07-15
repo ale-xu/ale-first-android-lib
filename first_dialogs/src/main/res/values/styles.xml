@@ -1,5 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<!--    自定义右侧画出动画-->
+    <style name="HsuFirstRightSlideAnimation" parent="@android:style/Animation" >
+        <item name="android:windowEnterAnimation">@anim/hsu_view_slide_in_right</item>
+        <item name="android:windowExitAnimation" >@anim/hsu_view_slide_out_right</item>
+    </style>
 
+    <style name="HsuFirstRightSlideDialog" parent="Theme.AppCompat.Dialog">
+<!--        设置背景透明，外部空白自动加上半透明蒙版-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+<!--        无标题-->
+        <item name="windowNoTitle">true</item>
+<!--        绑定动画-->
+        <item name="android:windowAnimationStyle">@style/HsuFirstRightSlideAnimation</item>
 
+<!--        关键：取消浮动窗口，使Dialog能真正全屏并覆盖状态栏-->
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="HsuDateSlideAnimation" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/hsu_date_slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/hsu_date_slide_out_bottom</item>
+    </style>
+
+    <style name="HsuDateSelectorDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/HsuDateSlideAnimation</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="HsuAddressSlideAnimation" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/hsu_address_slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/hsu_address_slide_out_bottom</item>
+    </style>
+
+    <style name="HsuAddressSelectorDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/HsuAddressSlideAnimation</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
 </resources>
