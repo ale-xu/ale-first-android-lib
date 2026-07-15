@@ -36,7 +36,7 @@ import java.util.List;
  * */
 
 
-public class HsuDateSelectorDialog extends AppCompatDialog {
+public class DateSelectorAaDialog extends AppCompatDialog {
 
     private static final String TAG = "HsuDateSelectorDialog";
     private static final int MIN_YEAR = 1949;
@@ -61,9 +61,9 @@ public class HsuDateSelectorDialog extends AppCompatDialog {
     private int selectedMonth = 1;
     private int selectedDay = 1;
 
-    private HsuDateSelectorAdapter yearAdapter;
-    private HsuDateSelectorAdapter monthAdapter;
-    private HsuDateSelectorAdapter dayAdapter;
+    private DateSelectorAaAdapter yearAdapter;
+    private DateSelectorAaAdapter monthAdapter;
+    private DateSelectorAaAdapter dayAdapter;
 
     private View maskView;
     private View contentView;
@@ -88,7 +88,7 @@ public class HsuDateSelectorDialog extends AppCompatDialog {
         void onCancel();
     }
 
-    public HsuDateSelectorDialog(@NonNull Context context) {
+    public DateSelectorAaDialog(@NonNull Context context) {
         super(context, R.style.HsuDateSelectorDialog);
         this.context = context;
     }
@@ -232,9 +232,9 @@ public class HsuDateSelectorDialog extends AppCompatDialog {
     }
 
     private void setupAdapters() {
-        yearAdapter = new HsuDateSelectorAdapter(context, years, "年");
-        monthAdapter = new HsuDateSelectorAdapter(context, months, "月");
-        dayAdapter = new HsuDateSelectorAdapter(context, days, "日");
+        yearAdapter = new DateSelectorAaAdapter(context, years, "年");
+        monthAdapter = new DateSelectorAaAdapter(context, months, "月");
+        dayAdapter = new DateSelectorAaAdapter(context, days, "日");
 
         lvYear.setAdapter(yearAdapter);
         lvMonth.setAdapter(monthAdapter);
@@ -415,7 +415,7 @@ public class HsuDateSelectorDialog extends AppCompatDialog {
 
         contentView.postDelayed(() -> {
             isDismissing = false;
-            HsuDateSelectorDialog.super.cancel();
+            DateSelectorAaDialog.super.cancel();
         }, ANIMATION_DURATION);
     }
 

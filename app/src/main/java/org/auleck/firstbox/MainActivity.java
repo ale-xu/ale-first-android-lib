@@ -11,10 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import org.auleck.first_dialogs.dialogs.address.HsuAddressSelectorDialog;
-import org.auleck.first_dialogs.dialogs.date.HsuDateSelectorDialog;
-import org.auleck.first_dialogs.dialogs.slide.BaseSlideAaDialog;
-import org.auleck.first_dialogs.dialogs.slide.TestSlideDialog;
+import org.auleck.first_dialogs.dialogs.date.DateSelectorAaDialog;
 import org.auleck.first_utils.mmkv.MMKVUtils;
 import org.auleck.first_views.FirstViewsUtil;
 
@@ -39,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         MMKVUtils.putString("USER_UID","15837079884");
 
         button1.setOnClickListener(v -> {
-            HsuDateSelectorDialog dialog = new HsuDateSelectorDialog(this);
+            DateSelectorAaDialog dialog = new DateSelectorAaDialog(this);
             dialog.setOnConfirmListener((year, month, day) -> {
                 String dateStr = year + "-" + month + "-" + day;
                 Toast.makeText(this, dateStr, Toast.LENGTH_SHORT).show();

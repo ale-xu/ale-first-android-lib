@@ -54,7 +54,7 @@ import java.util.List;
  * ==== 数据格式 ====
  * province.json: [{name, city: [{name, area: [string]}]}]
  */
-public class HsuAddressSelectorDialog extends AppCompatDialog {
+public class AddressSelectorAaDialog extends AppCompatDialog {
 
     private static final String TAG = "HsuAddressSelectorDialog";
     private static final String ASSET_FILE_NAME = "province.json";
@@ -76,9 +76,9 @@ public class HsuAddressSelectorDialog extends AppCompatDialog {
     private int selectedDistrictIndex = 0;
 
     // ---- 适配器 ----
-    private HsuAddressSelectorAdapter provinceAdapter;
-    private HsuAddressSelectorAdapter cityAdapter;
-    private HsuAddressSelectorAdapter districtAdapter;
+    private AddressSelectorAaAdapter provinceAdapter;
+    private AddressSelectorAaAdapter cityAdapter;
+    private AddressSelectorAaAdapter districtAdapter;
 
     // ---- 视图 ----
     private View contentView;
@@ -124,7 +124,7 @@ public class HsuAddressSelectorDialog extends AppCompatDialog {
 
     // ==================== 构造 ====================
 
-    public HsuAddressSelectorDialog(@NonNull Context context) {
+    public AddressSelectorAaDialog(@NonNull Context context) {
         super(context, R.style.HsuAddressSelectorDialog);
         this.context = context;
     }
@@ -180,9 +180,9 @@ public class HsuAddressSelectorDialog extends AppCompatDialog {
         tvRetry = findViewById(R.id.hasd_tv_retry);
 
         // 适配器占位初始化（数据加载完成后更新）
-        provinceAdapter = new HsuAddressSelectorAdapter(context);
-        cityAdapter = new HsuAddressSelectorAdapter(context);
-        districtAdapter = new HsuAddressSelectorAdapter(context);
+        provinceAdapter = new AddressSelectorAaAdapter(context);
+        cityAdapter = new AddressSelectorAaAdapter(context);
+        districtAdapter = new AddressSelectorAaAdapter(context);
 
         lvProvince.setAdapter(provinceAdapter);
         lvCity.setAdapter(cityAdapter);
@@ -496,11 +496,11 @@ public class HsuAddressSelectorDialog extends AppCompatDialog {
         if (contentView != null) {
             contentView.postDelayed(() -> {
                 isDismissing = false;
-                HsuAddressSelectorDialog.super.cancel();
+                AddressSelectorAaDialog.super.cancel();
             }, ANIMATION_DURATION);
         } else {
             isDismissing = false;
-            HsuAddressSelectorDialog.super.cancel();
+            AddressSelectorAaDialog.super.cancel();
         }
     }
 
