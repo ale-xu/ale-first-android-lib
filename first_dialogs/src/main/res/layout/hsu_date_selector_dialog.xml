@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/transparent">
+
+    <View
+        android:id="@+id/hdsd_mask"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:id="@+id/hdsd_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:background="@drawable/hsu_date_content_bg"
+        android:elevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/hdsd_tv_cancel_top"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="取消"
+                android:textSize="13sp"
+                android:textColor="@color/hsu_text_secondary"
+                android:paddingLeft="14dp"
+                android:paddingRight="8dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="8dp"
+                android:gravity="center" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="请选择日期"
+                android:textSize="15sp"
+                android:textColor="@color/hsu_text_primary"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/hdsd_tv_confirm_top"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="确定"
+                android:textSize="13sp"
+                android:textColor="@color/hsu_primary"
+                android:textStyle="bold"
+                android:paddingLeft="8dp"
+                android:paddingRight="14dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="8dp"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/hsu_date_tab_bg">
+
+            <TextView
+                android:id="@+id/hdsd_tv_year"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="年"
+                android:textSize="13sp"
+                android:textColor="@color/hsu_primary"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=">"
+                android:textSize="11sp"
+                android:textColor="@color/hsu_text_disabled"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/hdsd_tv_month"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="月"
+                android:textSize="13sp"
+                android:textColor="@color/hsu_primary"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=">"
+                android:textSize="11sp"
+                android:textColor="@color/hsu_text_disabled"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/hdsd_tv_day"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="日"
+                android:textSize="13sp"
+                android:textColor="@color/hsu_primary"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ListView
+                android:id="@+id/hdsd_lv_year"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scrollbars="none" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/hsu_divider" />
+
+            <ListView
+                android:id="@+id/hdsd_lv_month"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scrollbars="none" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/hsu_divider" />
+
+            <ListView
+                android:id="@+id/hdsd_lv_day"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scrollbars="none" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingTop="6dp"
+            android:paddingBottom="8dp">
+
+            <Button
+                android:id="@+id/hdsd_btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="取消"
+                android:textSize="13sp"
+                android:textColor="@color/hsu_text_secondary"
+                android:background="@drawable/hsu_date_btn_cancel_bg"
+                android:backgroundTint="@null"
+                app:backgroundTint="@null"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="6dp"
+                android:padding="0dp"
+                android:elevation="0dp"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/hdsd_btn_confirm"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="确定"
+                android:textSize="13sp"
+                android:textColor="@color/white"
+                android:background="@drawable/hsu_date_btn_confirm_bg"
+                android:backgroundTint="@null"
+                app:backgroundTint="@null"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="16dp"
+                android:padding="0dp"
+                android:elevation="0dp"
+                android:stateListAnimator="@null" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

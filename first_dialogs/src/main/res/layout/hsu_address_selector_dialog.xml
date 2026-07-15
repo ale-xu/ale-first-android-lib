@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/hasd_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/hsu_address_content_bg"
+    android:elevation="8dp">
+
+    <!-- 标题栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/hasd_tv_cancel_top"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="取消"
+            android:textSize="13sp"
+            android:textColor="@color/hsu_text_secondary"
+            android:paddingLeft="14dp"
+            android:paddingRight="8dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="8dp"
+            android:gravity="center" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="请选择地址"
+            android:textSize="15sp"
+            android:textColor="@color/hsu_text_primary"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/hasd_tv_confirm_top"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="确定"
+            android:textSize="13sp"
+            android:textColor="@color/hsu_primary"
+            android:textStyle="bold"
+            android:paddingLeft="8dp"
+            android:paddingRight="14dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="8dp"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- Tab 路径头 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="6dp"
+        android:background="@drawable/hsu_address_tab_bg">
+
+        <TextView
+            android:id="@+id/hasd_tv_province"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="请选择省"
+            android:textSize="13sp"
+            android:textColor="@color/hsu_address_text_hint"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text=">"
+            android:textSize="11sp"
+            android:textColor="@color/hsu_address_separator"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/hasd_tv_city"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="请选择市"
+            android:textSize="13sp"
+            android:textColor="@color/hsu_address_text_hint"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text=">"
+            android:textSize="11sp"
+            android:textColor="@color/hsu_address_separator"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/hasd_tv_district"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="请选择区"
+            android:textSize="13sp"
+            android:textColor="@color/hsu_address_text_hint"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- 内容区域（三列级联 + 加载/错误状态） -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- 三列级联列表 -->
+        <LinearLayout
+            android:id="@+id/hasd_columns_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ListView
+                android:id="@+id/hasd_lv_province"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scrollbars="none"
+                android:overScrollMode="never" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/hsu_divider" />
+
+            <ListView
+                android:id="@+id/hasd_lv_city"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scrollbars="none"
+                android:overScrollMode="never" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/hsu_divider" />
+
+            <ListView
+                android:id="@+id/hasd_lv_district"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scrollbars="none"
+                android:overScrollMode="never" />
+        </LinearLayout>
+
+        <!-- 加载状态 -->
+        <LinearLayout
+            android:id="@+id/hasd_loading_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <ProgressBar
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:indeterminateTint="@color/hsu_primary"
+                android:indeterminateTintMode="src_in" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="加载地址数据中..."
+                android:textSize="12sp"
+                android:textColor="@color/hsu_address_text_hint" />
+        </LinearLayout>
+
+        <!-- 错误状态 -->
+        <LinearLayout
+            android:id="@+id/hasd_error_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="数据加载失败"
+                android:textSize="13sp"
+                android:textColor="@color/hsu_text_secondary" />
+
+            <TextView
+                android:id="@+id/hasd_tv_retry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="请重试"
+                android:textSize="12sp"
+                android:textColor="@color/hsu_primary"
+                android:padding="8dp" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- 底部按钮栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="6dp"
+        android:paddingBottom="8dp">
+
+        <Button
+            android:id="@+id/hasd_btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="取消"
+            android:textSize="13sp"
+            android:textColor="@color/hsu_text_secondary"
+            android:background="@drawable/hsu_address_btn_cancel_bg"
+            android:backgroundTint="@null"
+            app:backgroundTint="@null"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="6dp"
+            android:padding="0dp"
+            android:elevation="0dp"
+            android:stateListAnimator="@null" />
+
+        <Button
+            android:id="@+id/hasd_btn_confirm"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="确定"
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:background="@drawable/hsu_address_btn_confirm_bg"
+            android:backgroundTint="@null"
+            app:backgroundTint="@null"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="16dp"
+            android:padding="0dp"
+            android:elevation="0dp"
+            android:stateListAnimator="@null" />
+    </LinearLayout>
+</LinearLayout>

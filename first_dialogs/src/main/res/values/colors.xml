@@ -2,4 +2,19 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="hsu_primary">#FF1677ff</color>
+    <color name="hsu_text_primary">#FF333333</color>
+    <color name="hsu_text_secondary">#CC333333</color>
+    <color name="hsu_text_tertiary">#D9333333</color>
+    <color name="hsu_text_disabled">#66333333</color>
+    <color name="hsu_tab_bg">#FFF5F6F8</color>
+    <color name="hsu_divider">#FFE8E8E8</color>
+    <color name="hsu_btn_cancel_bg">#FFF0F0F0</color>
+    <color name="hsu_btn_confirm_bg">#FF1677ff</color>
+    <color name="hsu_mask">#4DFFFFFF</color>
+    <color name="hsu_selected_bg">#0D1677ff</color>
+    <color name="hsu_address_mask">#73000000</color>
+    <color name="hsu_address_separator">#40333333</color>
+    <color name="hsu_address_text_hint">#66333333</color>
+    <color name="hsu_address_loading_bg">#0F1677FF</color>
 </resources>

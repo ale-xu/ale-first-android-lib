@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ImageSelectView">
+        <attr name="isv_columnMode" format="enum">
+            <enum name="threeColumns" value="3" />
+            <enum name="fourColumns" value="4" />
+        </attr>
+        <attr name="isv_spacing" format="dimension" />
+    </declare-styleable>
+</resources>

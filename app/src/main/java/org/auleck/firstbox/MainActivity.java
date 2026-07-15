@@ -11,6 +11,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import org.auleck.first_dialogs.dialogs.address.HsuAddressSelectorDialog;
+import org.auleck.first_dialogs.dialogs.date.HsuDateSelectorDialog;
 import org.auleck.first_dialogs.dialogs.slide.BaseSlideAaDialog;
 import org.auleck.first_dialogs.dialogs.slide.TestSlideDialog;
 import org.auleck.first_utils.mmkv.MMKVUtils;
@@ -37,25 +39,13 @@ public class MainActivity extends AppCompatActivity {
         MMKVUtils.putString("USER_UID","15837079884");
 
         button1.setOnClickListener(v -> {
-            //Toast.makeText(this, FirstDialogsUtil.ToastText, Toast.LENGTH_SHORT).show();
-            /*new TextPopupFirstAlert.Builder(this)
-                    .titleText("标题")
-                    .contentText("这是弹窗内容")
-                    .autoCancel(false)
-                    .onCancelClick(new TextPopupFirstAlert.TextPopupFirstAlertImpl() {
-                        @Override
-                        public void onCancelClick() {
+            HsuDateSelectorDialog dialog = new HsuDateSelectorDialog(this);
+            dialog.setOnConfirmListener((year, month, day) -> {
+                String dateStr = year + "-" + month + "-" + day;
+                Toast.makeText(this, dateStr, Toast.LENGTH_SHORT).show();
+            });
 
-                        }
-                    })
-                    .create()
-                    .show();*/
-
-
-            // 在你的Activity中调用
-            TestSlideDialog dialog = new TestSlideDialog(this);
             dialog.show();
-
         });
         button2.setOnClickListener(v -> {
             Toast.makeText(this, FirstViewsUtil.ToastText, Toast.LENGTH_SHORT).show();

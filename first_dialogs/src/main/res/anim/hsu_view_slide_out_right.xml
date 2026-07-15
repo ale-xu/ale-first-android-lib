@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- fromXDelta=0% 表示从原位开始，toXDelta=100% 表示移动到屏幕右侧外部 -->
+    <translate
+        android:fromXDelta="0%"
+        android:toXDelta="100%"
+        android:duration="300" />
+</set>
