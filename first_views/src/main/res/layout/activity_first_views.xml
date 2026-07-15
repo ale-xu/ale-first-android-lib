@@ -7,10 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".FirstViewsActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <org.auleck.first_views.CircleView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:circle_color="#FF6200EE"
+        app:circle_radius="80dp"
+        app:border_width="4dp"
+        app:border_color="#FF018756"
+        app:corner_radius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

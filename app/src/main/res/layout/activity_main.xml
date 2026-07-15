@@ -9,6 +9,19 @@
     android:gravity="center"
     tools:context=".MainActivity">
 
+    <org.auleck.first_views.CircleView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:circle_color="#1296db"
+        app:circle_radius="80dp"
+        app:border_width="4dp"
+        app:border_color="#0E6B9B"
+        app:corner_radius="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/main_btn1"
         android:layout_width="match_parent"

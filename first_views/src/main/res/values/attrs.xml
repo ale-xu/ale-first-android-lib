@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    CircleView -->
+    <declare-styleable name="CircleView">
+        <!-- 定义圆形颜色，格式为颜色 -->
+        <attr name="circle_color" format="color" />
+        <!-- 定义圆形半径，格式为尺寸 -->
+        <attr name="circle_radius" format="dimension" />
+        <!-- 定义边框宽度，格式为尺寸 -->
+        <attr name="border_width" format="dimension" />
+        <!-- 定义边框颜色，格式为颜色 -->
+        <attr name="border_color" format="color" />
+        <!-- 定义组件圆角弧度，格式为尺寸 -->
+        <attr name="corner_radius" format="dimension" />
+    </declare-styleable>
+
+
+
+    <!-- 文字相关 -->
+    <attr name="text" format="string"/>
+    <attr name="hint" format="string"/>
+    <attr name="textColor" format="reference|color"/>
+    <attr name="textSize" format="dimension"/>
+    <attr name="textColorHint" format="reference|color"/>
+    <attr name="gravity">
+        <enum name="top" value="0x30"/>
+        <enum name="bottom" value="0x50"/>
+        <enum name="left" value="0x03"/>
+        <enum name="right" value="0x05"/>
+        <enum name="center_vertical" value="0x10"/>
+        <enum name="center_horizontal" value="0x01"/>
+        <enum name="center" value="0x11"/>
+    </attr>
+    <attr name="textStyle">
+        <flag name="normal" value="0"/>
+        <flag name="bold" value="1"/>
+        <flag name="italic" value="2"/>
+    </attr>
+
+    <!-- 输入框外观 -->
+    <attr name="boxBackgroundColor" format="reference|color"/>
+    <attr name="boxStrokeColor" format="reference|color"/>
+    <attr name="boxFocusStrokeColor" format="reference|color"/>
+    <attr name="boxStrokeWidth" format="dimension"/>
+    <attr name="boxCornerRadius" format="dimension"/>
+    <attr name="boxWidth" format="dimension"/>
+    <attr name="boxHeight" format="dimension"/>
+    <attr name="boxMargin" format="dimension"/>
+
+    <!-- 输入限制 -->
+    <attr name="maxLength" format="integer"/>
+    <attr name="minLength" format="integer"/>
+    <attr name="maxLines" format="integer"/>
+    <attr name="singleLine" format="boolean"/>
+
+    <!-- 交互 -->
+    <attr name="showClearButton" format="boolean"/>
+    <attr name="clearButtonDrawable" format="reference"/>
+    <attr name="showPasswordToggle" format="boolean"/>
+    <attr name="passwordToggleDrawable" format="reference"/>
+
+    <!-- 前置文字（前缀） -->
+    <attr name="headerText" format="string"/>
+    <attr name="headerTextSize" format="dimension"/>
+    <attr name="headerTextColor" format="reference|color"/>
+    <attr name="headerTextStyle">
+        <flag name="normal" value="0"/>
+        <flag name="bold" value="1"/>
+        <flag name="italic" value="2"/>
+    </attr>
+    <attr name="headerPaddingStart" format="dimension"/>
+    <attr name="headerPaddingEnd" format="dimension"/>
+    <attr name="headerPaddingTop" format="dimension"/>
+    <attr name="headerPaddingBottom" format="dimension"/>
+
+    <!-- 后置文字（后缀） -->
+    <attr name="suffixText" format="string"/>
+    <attr name="suffixTextSize" format="dimension"/>
+    <attr name="suffixTextColor" format="reference|color"/>
+
+    <!-- 验证与提示 -->
+    <attr name="errorText" format="string"/>
+    <attr name="errorTextColor" format="reference|color"/>
+    <attr name="errorDrawable" format="reference"/>
+    <attr name="showErrorState" format="boolean"/>
+    <attr name="required" format="boolean"/>
+
+    <!-- 高级功能 -->
+    <attr name="inputBoxStyle">
+        <enum name="connectBox" value="1"/>
+        <enum name="singleBox" value="2"/>
+        <enum name="underline" value="3"/>
+    </attr>
+    <attr name="contentShowMode">
+        <enum name="password" value="1"/>
+        <enum name="text" value="2"/>
+    </attr>
+    <attr name="boxNum" format="integer"/>
+    <attr name="ciphertext" format="boolean"/>
+    <attr name="autoFocus" format="boolean"/>
+    <attr name="selectAllOnFocus" format="boolean"/>
+
+    <!-- ========== 新增属性 ========== -->
+    <!-- 边框颜色（独立于 focus 状态） -->
+    <attr name="borderColor" format="reference|color"/>
+    <!-- 字间距（字母间距） -->
+    <attr name="letterSpacing" format="float|dimension"/>
+    <!-- 行间距（行高额外增加量） -->
+    <attr name="lineSpacing" format="float|dimension"/>
+
+    <!-- ==================== 自定义输入框组件 ==================== -->
+
+    <declare-styleable name="TextInput">
+        <!-- 基础文本 -->
+        <attr name="text"/>
+        <attr name="hint"/>
+        <attr name="textColor"/>
+        <attr name="textSize"/>
+        <attr name="textColorHint"/>
+        <attr name="gravity"/>
+        <attr name="textStyle"/>
+
+        <!-- 外观样式 -->
+        <attr name="boxBackgroundColor"/>
+        <attr name="boxStrokeColor"/>
+        <attr name="boxFocusStrokeColor"/>
+        <attr name="boxStrokeWidth"/>
+        <attr name="boxCornerRadius"/>
+        <attr name="boxWidth"/>
+        <attr name="boxHeight"/>
+        <attr name="boxMargin"/>
+
+        <!-- 输入限制 -->
+        <attr name="android:inputType"/>
+        <attr name="maxLength"/>
+        <attr name="minLength"/>
+        <attr name="maxLines"/>
+        <attr name="singleLine"/>
+
+        <!-- 交互 -->
+        <attr name="android:enabled"/>
+        <attr name="showClearButton"/>
+        <attr name="clearButtonDrawable"/>
+        <attr name="showPasswordToggle"/>
+        <attr name="passwordToggleDrawable"/>
+
+        <!-- 前缀 -->
+        <attr name="headerText"/>
+        <attr name="headerTextSize"/>
+        <attr name="headerTextColor"/>
+        <attr name="headerTextStyle"/>
+        <attr name="headerPaddingStart"/>
+        <attr name="headerPaddingEnd"/>
+        <attr name="headerPaddingTop"/>
+        <attr name="headerPaddingBottom"/>
+
+        <!-- 后缀 -->
+        <attr name="suffixText"/>
+        <attr name="suffixTextSize"/>
+        <attr name="suffixTextColor"/>
+
+        <!-- 验证 -->
+        <attr name="errorText"/>
+        <attr name="errorTextColor"/>
+        <attr name="errorDrawable"/>
+        <attr name="showErrorState"/>
+        <attr name="required"/>
+
+        <!-- 高级 -->
+        <attr name="inputBoxStyle"/>
+        <attr name="contentShowMode"/>
+        <attr name="boxNum"/>
+        <attr name="ciphertext"/>
+        <attr name="autoFocus"/>
+        <attr name="selectAllOnFocus"/>
+
+        <!-- ========== 新增属性引用 ========== -->
+        <attr name="borderColor"/>
+        <attr name="letterSpacing"/>
+        <attr name="lineSpacing"/>
+    </declare-styleable>
+</resources>
