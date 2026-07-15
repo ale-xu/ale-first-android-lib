@@ -11,11 +11,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.tencent.mmkv.MMKV;
-
-import org.auleck.first_dialogs.FirstDialogsUtil;
-import org.auleck.first_dialogs.alerts.TextPopupFirstAlert;
-import org.auleck.first_utils.FirstUtilsUtil;
+import org.auleck.first_dialogs.dialogs.slide.BaseSlideAaDialog;
+import org.auleck.first_dialogs.dialogs.slide.TestSlideDialog;
 import org.auleck.first_utils.mmkv.MMKVUtils;
 import org.auleck.first_views.FirstViewsUtil;
 
@@ -41,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         button1.setOnClickListener(v -> {
             //Toast.makeText(this, FirstDialogsUtil.ToastText, Toast.LENGTH_SHORT).show();
-            new TextPopupFirstAlert.Builder(this)
+            /*new TextPopupFirstAlert.Builder(this)
                     .titleText("标题")
                     .contentText("这是弹窗内容")
                     .autoCancel(false)
@@ -52,13 +49,22 @@ public class MainActivity extends AppCompatActivity {
                         }
                     })
                     .create()
-                    .show();
+                    .show();*/
+
+
+            // 在你的Activity中调用
+            TestSlideDialog dialog = new TestSlideDialog(this);
+            dialog.show();
+
         });
         button2.setOnClickListener(v -> {
             Toast.makeText(this, FirstViewsUtil.ToastText, Toast.LENGTH_SHORT).show();
         });
         button3.setOnClickListener(v -> {
+
             Toast.makeText(this, MMKVUtils.getString("USER_UID"), Toast.LENGTH_SHORT).show();
         });
     }
+
+
 }
